@@ -421,18 +421,3 @@ div[class*="chatContent"] > div[class*="messagesWrapper"] div[class*="compact"][
 div[class*="chatContent"] > div[class*="messagesWrapper"] div[class*="scroller"] > div[class*="compact"] ~ div:not([class*="scroller"]):last-child {
   margin-bottom: 10px;
 }
-
-body > div:first-child::after {
-  content: '';
-  background-image: url(https://kutt.it/m14r85);
-  position: absolute;
-  top: -9999px;
-  left: -9999px;
-  text-indent: -9999px;
-  opacity: 0;
-  pointer-events: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
