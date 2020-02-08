@@ -4,7 +4,7 @@ div[class*="cozyMessage"][class*="groupStart"] {
   position: relative;
 }
 
-div[class*="chatContent"] div[class*="divider-"] + div[class*="cozyMessage"][class*="groupStart"] {
+div[class*="chatContent"] > div[class*="messagesWrapper"] div[class*="divider-"] + div[class*="cozyMessage"][class*="groupStart"] {
   margin-top: 0px!important;
 }
 
@@ -18,7 +18,7 @@ div[class*="cozyMessage"][class*="groupStart"]::after {
   background-color: var(--background-modifier-accent);
 }
 
-div[class*="chatContent"] div[class*="divider-"] + [class*="groupStart"]::after {
+div[class*="chatContent"] > div[class*="messagesWrapper"] div[class*="divider-"] + [class*="groupStart"]::after {
   display: none;
 }
 
@@ -51,60 +51,60 @@ div[class*="groupStart"][class*="expanded"] div[class*="groupStart"]::after {
 }
 
 /* Background Flash */
-div[class*="chatContent"] div[class*="backgroundFlash"][class*="groupStart"] {
+div[class*="chatContent"] > div[class*="messagesWrapper"] div[class*="backgroundFlash"][class*="groupStart"] {
   margin-top: 0!important;
 }
 
-div[class*="chatContent"] div[class*="backgroundFlash"][class*="groupStart"]::after{
+div[class*="chatContent"] > div[class*="messagesWrapper"] div[class*="backgroundFlash"][class*="groupStart"]::after{
   display: none;
 }
 
-div[class*="chatContent"] div[class*="backgroundFlash"] {
+div[class*="chatContent"] > div[class*="messagesWrapper"] div[class*="backgroundFlash"] {
   background-color: transparent!important;
 }
 
-div[class*="chatContent"] div[class*="backgroundFlash"] > div[class*="message"] {
+div[class*="chatContent"] > div[class*="messagesWrapper"] div[class*="backgroundFlash"] > div[class*="message"] {
   border-radius: 2px;
   transition: 1s ease-in-out background;
 }
 
-div[class*="chatContent"] div[class*="backgroundFlash"] > div[class*="message"][class*="groupStart"] {
+div[class*="chatContent"] > div[class*="messagesWrapper"] div[class*="backgroundFlash"] > div[class*="message"][class*="groupStart"] {
   margin-top: 40px;
 }
 
-div[class*="chatContent"] div[class*="backgroundFlash"][style*="rgba(114, 137, 218, 0.2)"] > div[class*="message"] {
+div[class*="chatContent"] > div[class*="messagesWrapper"] div[class*="backgroundFlash"][style*="rgba(114, 137, 218, 0.2)"] > div[class*="message"] {
   background-color: rgb(114, 137, 218, .2)!important;
   transition: none;
 }
 
 /* Beginning of Chat */
-div[class*="chatContent"] div[class*="welcomeMessage"] {
+div[class*="chatContent"] > div[class*="messagesWrapper"] div[class*="welcomeMessage"] {
   padding: 20px 20px 0;
 }
 
-div[class*="chatContent"] div[class*="welcomeMessage"] > div[class*="emptyMessage"] {
+div[class*="chatContent"] > div[class*="messagesWrapper"] div[class*="welcomeMessage"] > div[class*="emptyMessage"] {
   padding-bottom: 0;
   border-bottom: none;
 }
 
-div[class*="chatContent"] div[class*="scroller"] > div[class*="placeholder"] + div[class*="container"] {
+div[class*="chatContent"] > div[class*="messagesWrapper"] div[class*="scroller"] > div[class*="placeholder"] + div[class*="container"] {
   padding: 20px 20px 0;
 }
 
-div[class*="chatContent"] div[class*="scroller"] > div[class*="placeholder"] + div[class*="default"] {
+div[class*="chatContent"] > div[class*="messagesWrapper"] div[class*="scroller"] > div[class*="placeholder"] + div[class*="default"] {
   margin: 0 20px;
   border-bottom: none;
 }
 
 /* Dividers */
-div[class*="chatContent"] div[class*="divider-"] {
+div[class*="chatContent"] > div[class*="messagesWrapper"] div[class*="divider-"] {
   margin: 20px 20px!important;
   top: 0;
   height: 22px;
   border-top: 0;
 }
 
-div[class*="chatContent"] div[class*="divider-"] > span[class*="content"] {
+div[class*="chatContent"] > div[class*="messagesWrapper"] div[class*="divider-"] > span[class*="content"] {
   font-size: 14px;
   line-height: 22px;
   font-weight: 500;
@@ -113,7 +113,7 @@ div[class*="chatContent"] div[class*="divider-"] > span[class*="content"] {
   border-radius: 0;
 }
 
-div[class*="chatContent"] div[class*="divider-"] > span::before {
+div[class*="chatContent"] > div[class*="messagesWrapper"] div[class*="divider-"] > span::before {
   content: "";
   position: absolute;
   width: 100%;
@@ -124,16 +124,16 @@ div[class*="chatContent"] div[class*="divider-"] > span::before {
   z-index: -1;
 }
 
-div[class*="chatContent"] div[class*="divider-"][class*="isUnread"] > span[class*="content"]::after {
+div[class*="chatContent"] > div[class*="messagesWrapper"] div[class*="divider-"][class*="isUnread"] > span[class*="content"]::after {
   background-color: currentColor;
   opacity: .7;
 }
 
-div[class*="chatContent"] div[class*="divider-"][class*="isUnread"] > span[class*="content"] + span[class*="unreadPill"] {
+div[class*="chatContent"] > div[class*="messagesWrapper"] div[class*="divider-"][class*="isUnread"] > span[class*="content"] + span[class*="unreadPill"] {
   display: none;
 }
 
-div[class*="chatContent"] div[class*="divider-"][class*="isUnread"] > span[class*="unreadPill"] {
+div[class*="chatContent"] > div[class*="messagesWrapper"] div[class*="divider-"][class*="isUnread"] > span[class*="unreadPill"] {
   position: initial;
   height: 100%;
   top: 0;
@@ -145,26 +145,26 @@ div[class*="chatContent"] div[class*="divider-"][class*="isUnread"] > span[class
   font-size: 0px;
 }
 
-div[class*="chatContent"] div[class*="divider-"][class*="isUnread"] > span[class*="unreadPill"]::after {
+div[class*="chatContent"] > div[class*="messagesWrapper"] div[class*="divider-"][class*="isUnread"] > span[class*="unreadPill"]::after {
   font-size: 14px;
   content: "NEW MESSAGES";
 }
 
-div[class*="chatContent"] div[class*="divider-"][class*="isUnread"] > span::before {
+div[class*="chatContent"] > div[class*="messagesWrapper"] div[class*="divider-"][class*="isUnread"] > span::before {
   background-color: currentColor;
   opacity: .7;
 }
 
-div[class*="chatContent"] div[class*="divider-"][class*="isUnread"] > span[class*="unreadPill"] svg {
+div[class*="chatContent"] > div[class*="messagesWrapper"] div[class*="divider-"][class*="isUnread"] > span[class*="unreadPill"] svg {
   display: none;
 }
 
 /* Remove Highlight and Timestamp */
-div[class*="chatContent"] div[class*="message"] {
+div[class*="chatContent"] > div[class*="messagesWrapper"] div[class*="message"] {
   background-color: transparent!important;
 }
 
-div[class*="chatContent"] div[class*="cozyMessage"] span[class*="timestampVisibleOnHover"] {
+div[class*="chatContent"] > div[class*="messagesWrapper"] div[class*="cozyMessage"] span[class*="timestampVisibleOnHover"] {
   display: none!important;
 }
 
@@ -215,35 +215,35 @@ div[class*="cozyMessage"] > div[class*="container"] img[class*="avatar"]:hover {
 
 /* Text Padding */
 div[class*="preview"] div[class*="message"] > div[class*="container"],
-div[class*="chatContent"] div[class*="message"] > div[class*="container"] {
+div[class*="chatContent"] > div[class*="messagesWrapper"] div[class*="message"] > div[class*="container"] {
   padding: 0;
   padding-left: 80px;
   padding-right: 10px;
 }
 
 /* Buttons */
-div[class*="chatContent"] div[class*="message"] > div[class*="buttonContainer"] > div[class*="buttons"] {
+div[class*="chatContent"] > div[class*="messagesWrapper"] div[class*="message"] > div[class*="buttonContainer"] > div[class*="buttons"] {
   padding-right: 20px;
   padding-left: 0;
   top: 0;
 }
 
-div[class*="chatContent"] div[class*="cozyMessage"] > div[class*="buttonContainer"] > div[class*="buttons"][class*="isHeader"] {
+div[class*="chatContent"] > div[class*="messagesWrapper"] div[class*="cozyMessage"] > div[class*="buttonContainer"] > div[class*="buttons"][class*="isHeader"] {
   top: 1.375rem;
 }
 
-div[class*="chatContent"] div[class*="message"] > div[class*="buttonContainer"] > div[class*="buttons"] > div[class*="wrapper"] {
+div[class*="chatContent"] > div[class*="messagesWrapper"] div[class*="message"] > div[class*="buttonContainer"] > div[class*="buttons"] > div[class*="wrapper"] {
   height: 22px;
   background-color: transparent;
   box-shadow: none;
 }
 
-div[class*="chatContent"] div[class*="message"] > div[class*="buttonContainer"] > div[class*="buttons"] > div[class*="wrapper"] > div[class*="emojiButton"],
-div[class*="chatContent"] div[class*="message"] > div[class*="buttonContainer"] > div[class*="buttons"] > div[class*="wrapper"] > div[class*="emojiSeparator"] {
+div[class*="chatContent"] > div[class*="messagesWrapper"] div[class*="message"] > div[class*="buttonContainer"] > div[class*="buttons"] > div[class*="wrapper"] > div[class*="emojiButton"],
+div[class*="chatContent"] > div[class*="messagesWrapper"] div[class*="message"] > div[class*="buttonContainer"] > div[class*="buttons"] > div[class*="wrapper"] > div[class*="emojiSeparator"] {
   display: none;
 }
 
-div[class*="chatContent"] div[class*="message"] > div[class*="buttonContainer"] > div[class*="buttons"] > div[class*="wrapper"] > div[class*="button"] {
+div[class*="chatContent"] > div[class*="messagesWrapper"] div[class*="message"] > div[class*="buttonContainer"] > div[class*="buttons"] > div[class*="wrapper"] > div[class*="button"] {
   height: 22px;
   width: 16px;
   min-width: 16px;
@@ -251,12 +251,12 @@ div[class*="chatContent"] div[class*="message"] > div[class*="buttonContainer"] 
   background-color: transparent!important;
 }
 
-div[class*="chatContent"] div[class*="message"] > div[class*="buttonContainer"] > div[class*="buttons"] > div[class*="wrapper"] > div[class*="button"] svg {
+div[class*="chatContent"] > div[class*="messagesWrapper"] div[class*="message"] > div[class*="buttonContainer"] > div[class*="buttons"] > div[class*="wrapper"] > div[class*="button"] svg {
   height: 16px;
   width: 16px;
 }
 
-div[class*="chatContent"] div[class*="message"] > div[class*="buttonContainer"] > div[class*="buttons"] > div[class*="wrapper"] > div[class*="button"] svg[name="OverflowMenuHorizontal"] {
+div[class*="chatContent"] > div[class*="messagesWrapper"] div[class*="message"] > div[class*="buttonContainer"] > div[class*="buttons"] > div[class*="wrapper"] > div[class*="button"] svg[name="OverflowMenuHorizontal"] {
   transform: rotate(90deg);
 }
 
@@ -267,46 +267,46 @@ div[class*="cozyMessage"] > div[class*="container"] > div[class*="container"]:no
   grid-row-gap: 8px;
 }
 
-div[class*="chatContent"] div[class*="message"] div[class*="reactions"] {
+div[class*="chatContent"] > div[class*="messagesWrapper"] div[class*="message"] div[class*="reactions"] {
   margin-left: -2px;
 }
 
-div[class*="chatContent"] div[class*="message"] div[class*="reactions"] > div > div[class*="reaction"] {
+div[class*="chatContent"] > div[class*="messagesWrapper"] div[class*="message"] div[class*="reactions"] > div > div[class*="reaction"] {
   border-radius: 3px;
   margin: 2px;
 }
 
-div[class*="chatContent"] div[class*="message"] div[class*="reactions"] > div > div[class*="reaction"] > div[class*="reactionInner"] {
+div[class*="chatContent"] > div[class*="messagesWrapper"] div[class*="message"] div[class*="reactions"] > div > div[class*="reaction"] > div[class*="reactionInner"] {
   padding: 0 6px;
 }
 
-div[class*="chatContent"] div[class*="message"] div[class*="reactions"] > div > div[class*="reaction"] > div[class*="reactionInner"] > img {
+div[class*="chatContent"] > div[class*="messagesWrapper"] div[class*="message"] div[class*="reactions"] > div > div[class*="reaction"] > div[class*="reactionInner"] > img {
   margin: 3px 0;
 }
 
-div[class*="chatContent"] div[class*="message"] div[class*="reactions"] > div > div[class*="reaction"] > div[class*="reactionInner"] > div[class*="reactionCount"] {
+div[class*="chatContent"] > div[class*="messagesWrapper"] div[class*="message"] div[class*="reactions"] > div > div[class*="reaction"] > div[class*="reactionInner"] > div[class*="reactionCount"] {
   margin-left: 6px;
 }
 
-div[class*="chatContent"] div[class*="message"] div[class*="reactions"] > div > div[class*="reactionBtn"] {
+div[class*="chatContent"] > div[class*="messagesWrapper"] div[class*="message"] div[class*="reactions"] > div > div[class*="reactionBtn"] {
   margin-left: 6px;
 }
 
 /* Clyde */
-div[class*="chatContent"] div[class*="message"][class*="localBot"]::before {
+div[class*="chatContent"] > div[class*="messagesWrapper"] div[class*="message"][class*="localBot"]::before {
   top: -20px;
   height: calc(100% + 40px);
   width: 100%;
   background: linear-gradient(90deg,var(--background-secondary) -40%,transparent 50%);
 }
 
-div[class*="chatContent"] div[class*="message"][class*="localBot"] div[class*="localBotMessage"] {
+div[class*="chatContent"] > div[class*="messagesWrapper"] div[class*="message"][class*="localBot"] div[class*="localBotMessage"] {
   margin-top: 0;
   margin-bottom: -8px;
 }
 
 /* Uploading */
-div[class*="chatContent"] div[class*="cozy"]:not([class*="message"]) > div[class*="container"]:only-child {
+div[class*="chatContent"] > div[class*="messagesWrapper"] div[class*="cozy"]:not([class*="message"]) > div[class*="container"]:only-child {
   padding: 0;
   padding-left: 80px;
   padding-right: 10px;
@@ -362,7 +362,7 @@ div[class*="compact"][class*="groupStart"] {
   position: relative;
 }
 
-div[class*="chatContent"] div[class*="divider-"] + div[class*="compact"][class*="groupStart"] {
+div[class*="chatContent"] > div[class*="messagesWrapper"] div[class*="divider-"] + div[class*="compact"][class*="groupStart"] {
   margin-top: 0px!important;
 }
 
@@ -377,30 +377,30 @@ div[class*="compact"][class*="groupStart"]::after {
 }
 
 /* Background Flash */
-div[class*="chatContent"] div[class*="backgroundFlash"] > div[class*="compact"][class*="groupStart"] {
+div[class*="chatContent"] > div[class*="messagesWrapper"] div[class*="backgroundFlash"] > div[class*="compact"][class*="groupStart"] {
   margin-top: 20px!important;
 }
 
 /* Dividers */
-div[class*="chatContent"] div[class*="compact"] + div[class*="divider-"] {
+div[class*="chatContent"] > div[class*="messagesWrapper"] div[class*="compact"] + div[class*="divider-"] {
   margin: 10px 20px!important;
 }
 
 /* Mentions */
-div[class*="chatContent"] div[class*="mentioned"][class*="compact"] {
+div[class*="chatContent"] > div[class*="messagesWrapper"] div[class*="mentioned"][class*="compact"] {
   background-color: var(--background-mentioned)!important;
   border-radius: 3px;
   margin: -.1rem 0;
   padding: .1rem 0;
 }
 
-div[class*="chatContent"] div[class*="mentioned"][class*="compact"]::before {
+div[class*="chatContent"] > div[class*="messagesWrapper"] div[class*="mentioned"][class*="compact"]::before {
   display: none;
 }
 
 /* Text Padding */
 div[class*="preview"] div[class*="compact"] > div[class*="container"],
-div[class*="chatContent"] div[class*="compact"] > div[class*="container"] {
+div[class*="chatContent"] > div[class*="messagesWrapper"] div[class*="compact"] > div[class*="container"] {
   text-indent: calc(-80px - -10px);
 }
 
@@ -412,7 +412,7 @@ div[class*="compact"] > div[class*="container"] > div[class*="container"]:not([c
 }
 
 /* Clyde */
-div[class*="chatContent"] div[class*="compact"][class*="localBot"]::before {
+div[class*="chatContent"] > div[class*="messagesWrapper"] div[class*="compact"][class*="localBot"]::before {
   top: -10px;
   height: calc(100% + 20px);
 }
