@@ -91,6 +91,11 @@ div[class*="chatContent"] div[class*="scroller"] > div[class*="placeholder"] + d
   padding: 20px 20px 0;
 }
 
+div[class*="chatContent"] div[class*="scroller"] > div[class*="placeholder"] + div[class*="default"] {
+  margin: 0 20px;
+  border-bottom: none;
+}
+
 /* Dividers */
 div[class*="chatContent"] div[class*="divider-"] {
   margin: 20px 20px!important;
