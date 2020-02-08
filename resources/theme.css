@@ -236,6 +236,8 @@ div[class*="chatContent"] > div[class*="messagesWrapper"] div[class*="message"] 
   height: 22px;
   background-color: transparent;
   box-shadow: none;
+  display: flex;
+  align-items: flex-start;
 }
 
 div[class*="chatContent"] > div[class*="messagesWrapper"] div[class*="message"] > div[class*="buttonContainer"] > div[class*="buttons"] > div[class*="wrapper"] > div[class*="emojiButton"],
@@ -244,7 +246,7 @@ div[class*="chatContent"] > div[class*="messagesWrapper"] div[class*="message"] 
 }
 
 div[class*="chatContent"] > div[class*="messagesWrapper"] div[class*="message"] > div[class*="buttonContainer"] > div[class*="buttons"] > div[class*="wrapper"] > div[class*="button"] {
-  height: 22px;
+  height: 16px;
   width: 16px;
   min-width: 16px;
   padding: 0;
@@ -310,6 +312,37 @@ div[class*="chatContent"] > div[class*="messagesWrapper"] div[class*="cozy"]:not
   padding: 0;
   padding-left: 80px;
   padding-right: 10px;
+  overflow: visible;
+}
+
+div[class*="chatContent"] > div[class*="messagesWrapper"] div[class*="cozy"]:not([class*="message"]) > div[class*="container"]:only-child > h2:first-child {
+  display: block;
+  min-height: 0;
+  line-height: 0;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+div[class*="chatContent"] > div[class*="messagesWrapper"] div[class*="cozy"]:not([class*="message"]) > div[class*="container"]:only-child > h2:first-child * {
+  display: none;
+}
+
+div[class*="chatContent"] > div[class*="messagesWrapper"] div[class*="cozy"]:not([class*="message"]) > div[class*="container"]:only-child > h2:first-child::after {
+  content: '';
+  position: absolute;
+  top: -20px;
+  left: 20px;
+  right: 20px;
+  height: 1px;
+  background-color: var(--background-modifier-accent);
+}
+
+div[class*="chatContent"] > div[class*="messagesWrapper"] div[class*="cozy"]:not([class*="message"]) > div[class*="container"]:only-child > h2:first-child + div[class*="markup"] {
+  margin-top: 40px;
 }
 
 /* Input */
@@ -415,6 +448,15 @@ div[class*="compact"] > div[class*="container"] > div[class*="container"]:not([c
 div[class*="chatContent"] > div[class*="messagesWrapper"] div[class*="compact"][class*="localBot"]::before {
   top: -10px;
   height: calc(100% + 20px);
+}
+
+/* Uploading */
+div[class*="chatContent"] > div[class*="messagesWrapper"] div[class*="compact"] ~ div[class*="cozy"]:not([class*="message"]) > div[class*="container"]:only-child > h2:first-child::after {
+  top: -10px;
+}
+
+div[class*="chatContent"] > div[class*="messagesWrapper"] div[class*="compact"] ~ div[class*="cozy"]:not([class*="message"]) > div[class*="container"]:only-child > h2:first-child + div[class*="markup"] {
+  margin-top: 20px;
 }
 
 /* Input */
