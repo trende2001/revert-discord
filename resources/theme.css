@@ -223,7 +223,7 @@ div[class*="chatContent"] > div[class*="messagesWrapper"] div[class*="message"] 
 
 /* Buttons */
 div[class*="chatContent"] > div[class*="messagesWrapper"] div[class*="message"] > div[class*="buttonContainer"] > div[class*="buttons"] {
-  padding-right: 20px;
+  padding-right: 10px;
   padding-left: 0;
   top: 0;
 }
@@ -260,6 +260,14 @@ div[class*="chatContent"] > div[class*="messagesWrapper"] div[class*="message"] 
 
 div[class*="chatContent"] > div[class*="messagesWrapper"] div[class*="message"] > div[class*="buttonContainer"] > div[class*="buttons"] > div[class*="wrapper"] > div[class*="button"] svg[name="OverflowMenuHorizontal"] {
   transform: rotate(90deg);
+}
+
+div[class*="chatContent"] > div[class*="messagesWrapper"] div[class*="message"] > div[class*="container"] > div[class*="markup"]::before {
+  content: "";
+  width: 32px;
+  height: 16px;
+  display: inline-flex;
+  float: right;
 }
 
 /* Embeds & Reactions */
