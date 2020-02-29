@@ -14,39 +14,10 @@ div[class*="cozyMessage"][class*="groupStart"]::after {
   top: -20px;
   left: 20px;
   right: 20px;
-  height: 1px;
-  background-color: var(--background-modifier-accent);
+  border-bottom: thin solid var(--background-modifier-accent);
 }
 
 div[class*="chatContent"] > div[class*="messagesWrapper"] div[class*="divider-"] + [class*="groupStart"]::after {
-  display: none;
-}
-
-/* Blocked */
-div[class*="groupStart"] div[class*="blocked"] {
-  padding: 0!important;
-  font-size: 14px;
-}
-
-div[class*="groupStart"][class*="expanded"] {
-  background-color: transparent;
-}
-
-div[class*="groupStart"][class*="expanded"]::before {
-  content: "";
-  position: absolute;
-  top: -20px;
-  left: 0;
-  height: calc(100% + 40px);
-  width: 100%;
-  background-color: var(--background-message-hover);
-}
-
-div[class*="groupStart"][class*="expanded"] div[class*="groupStart"] {
-  margin-top: 20px!important;
-}
-
-div[class*="groupStart"][class*="expanded"] div[class*="groupStart"]::after {
   display: none;
 }
 
@@ -173,18 +144,20 @@ div[class*="cozyMessage"][class*="mentioned"]::before {
   display: none;
 }
 
-div[class*="cozyMessage"][class*="mentioned"] div[class*="markup"]:not([class*="embed"]) {
-  background-color: var(--background-mentioned);
+div[class*="cozyMessage"][class*="mentioned"] > div[class*="contents"] > div[class*="markup"] {
+  background-color: var(--background-mentioned)!important;
   border-radius: 0 3px 3px 0;
   position: relative;
-  margin: -.1rem -.2rem .1rem;
-  padding: .1rem .2rem;
+  margin: -.1rem -.2rem .1rem!important;
+  padding: .1rem .2rem!important;
+  padding-left: calc(6px + .2rem)!important;
+  margin-left: -6px!important;
 }
 
-div[class*="cozyMessage"][class*="mentioned"] div[class*="markup"]:not([class*="embed"])::after {
+div[class*="cozyMessage"][class*="mentioned"] > div[class*="contents"] > div[class*="markup"]::after {
   position: absolute;
   top: 0;
-  left: -6px;
+  left: 0;
   content: '';
   width: 2px;
   background-color: rgba(250,166,26,.2);
@@ -194,31 +167,35 @@ div[class*="cozyMessage"][class*="mentioned"] div[class*="markup"]:not([class*="
 }
 
 /* Header & Avatar */
-div[class*="cozyMessage"] > div[class*="container"] span[class*="username"] {
+div[class*="cozyMessage"] > div[class*="contents"] > h2[class*="header"] span[class*="username"] {
   margin-right: .3rem;
 }
 
-div[class*="cozyMessage"] > div[class*="container"] span[class*="timestamp"] {
+div[class*="cozyMessage"] > div[class*="contents"] > h2[class*="header"] span[class*="timestamp"] {
   margin-left: 0;
 }
 
-div[class*="cozyMessage"] > div[class*="container"] img[class*="avatar"] {
-  margin-left: 12px;
+div[class*="cozyMessage"] > div[class*="contents"] img[class*="avatar"] {
+  margin-left: 4px;
   margin-right: 20px;
   filter: none!important;
   transform: none!important;
 }
 
-div[class*="cozyMessage"] > div[class*="container"] img[class*="avatar"]:hover {
+div[class*="cozyMessage"] > div[class*="contents"] img[class*="avatar"]:hover {
   opacity: .8;
 }
 
 /* Text Padding */
-div[class*="preview"] div[class*="message"] > div[class*="container"],
-div[class*="chatContent"] > div[class*="messagesWrapper"] div[class*="message"] > div[class*="container"] {
+div[class*="chatContent"] > div[class*="messagesWrapper"] div[class*="cozyMessage"] {
   padding: 0;
   padding-left: 80px;
   padding-right: 10px;
+}
+
+div[class*="chatContent"] > div[class*="messagesWrapper"] div[class*="cozyMessage"] > div[class*="contents"] > div[class*="markup"] {
+  padding-left: 80px;
+  margin-left: -80px;
 }
 
 /* Buttons */
@@ -262,7 +239,7 @@ div[class*="chatContent"] > div[class*="messagesWrapper"] div[class*="message"] 
   transform: rotate(90deg);
 }
 
-div[class*="chatContent"] > div[class*="messagesWrapper"] div[class*="message"] > div[class*="container"] > div[class*="markup"]::before {
+div[class*="chatContent"] > div[class*="messagesWrapper"] div[class*="message"] > div[class*="contents"] > div[class*="markup"]::before {
   content: "";
   width: 32px;
   height: 16px;
@@ -271,7 +248,7 @@ div[class*="chatContent"] > div[class*="messagesWrapper"] div[class*="message"] 
 }
 
 /* Embeds & Reactions */
-div[class*="cozyMessage"] > div[class*="container"] > div[class*="container"]:not([class*="markup"]) {
+div[class*="cozyMessage"] > div[class*="container"]:not([class*="button"]) {
   padding-top: 8px;
   padding-bottom: 8px;
   grid-row-gap: 8px;
@@ -308,6 +285,7 @@ div[class*="chatContent"] > div[class*="messagesWrapper"] div[class*="message"][
   height: calc(100% + 40px);
   width: 100%;
   background: linear-gradient(90deg,var(--background-secondary) -40%,transparent 50%);
+  z-index: -1;
 }
 
 div[class*="chatContent"] > div[class*="messagesWrapper"] div[class*="message"][class*="localBot"] div[class*="localBotMessage"] {
@@ -316,41 +294,47 @@ div[class*="chatContent"] > div[class*="messagesWrapper"] div[class*="message"][
 }
 
 /* Uploading */
-div[class*="chatContent"] > div[class*="messagesWrapper"] div[class*="cozy"]:not([class*="message"]) > div[class*="container"]:only-child {
+div[class*="chatContent"] > div[class*="messagesWrapper"] div[class^="wrapper"][class*="cozy"]:not([class*="message"]):not([class*="system"]):not([class*="backgroundFlash"]) {
   padding: 0;
   padding-left: 80px;
-  padding-right: 10px;
+  margin-top: 40px;
+}
+
+div[class*="chatContent"] > div[class*="messagesWrapper"] div[class^="wrapper"][class*="cozy"]:not([class*="message"]):not([class*="system"]):not([class*="backgroundFlash"]) > div[class*="contents"] > img {
+  pointer-events: none;
+  margin-left: 4px;
+  margin-right: 20px;
+  filter: none!important;
+  transform: none!important;
+}
+
+div[class*="chatContent"] > div[class*="messagesWrapper"] div[class^="wrapper"][class*="cozy"]:not([class*="message"]):not([class*="system"]):not([class*="backgroundFlash"]) > div[class*="contents"] > h2[class*="header"] > span[class*="username"] {
+  margin-right: .3rem;
+}
+
+div[class*="chatContent"] > div[class*="messagesWrapper"] div[class^="wrapper"][class*="cozy"]:not([class*="message"]):not([class*="system"]):not([class*="backgroundFlash"]) > div[class*="contents"] > h2[class*="header"] > span[class*="timestamp"] {
+  margin-left: 0;
+}
+
+div[class*="chatContent"] > div[class*="messagesWrapper"] div[class^="wrapper"][class*="cozy"]:not([class*="message"]):not([class*="system"]):not([class*="backgroundFlash"]) > div[class*="contents"] > h2[class*="header"] {
   overflow: visible;
+  position: initial;
 }
 
-div[class*="chatContent"] > div[class*="messagesWrapper"] div[class*="cozy"]:not([class*="message"]) > div[class*="container"]:only-child > h2:first-child {
-  display: block;
-  min-height: 0;
-  line-height: 0;
-  margin: 0;
-  padding: 0;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-}
-
-div[class*="chatContent"] > div[class*="messagesWrapper"] div[class*="cozy"]:not([class*="message"]) > div[class*="container"]:only-child > h2:first-child * {
-  display: none;
-}
-
-div[class*="chatContent"] > div[class*="messagesWrapper"] div[class*="cozy"]:not([class*="message"]) > div[class*="container"]:only-child > h2:first-child::after {
+div[class*="chatContent"] > div[class*="messagesWrapper"] div[class^="wrapper"][class*="cozy"]:not([class*="message"]):not([class*="system"]):not([class*="backgroundFlash"]) > div[class*="contents"] > h2[class*="header"]::before {
   content: '';
   position: absolute;
-  top: -20px;
+  display: block;
   left: 20px;
   right: 20px;
-  height: 1px;
-  background-color: var(--background-modifier-accent);
+  top: -20px;
+  border-bottom: thin solid var(--background-modifier-accent);
 }
 
-div[class*="chatContent"] > div[class*="messagesWrapper"] div[class*="cozy"]:not([class*="message"]) > div[class*="container"]:only-child > h2:first-child + div[class*="markup"] {
-  margin-top: 40px;
+div[class*="chatContent"] > div[class*="messagesWrapper"] div[class^="wrapper"][class*="cozy"]:not([class*="message"]):not([class*="system"]):not([class*="backgroundFlash"]) > div[class*="contents"] > div[class*="markup"]:last-child {
+  padding: 8px 0;
+  padding-left: 80px;
+  margin-left: -80px;
 }
 
 /* Input */
@@ -395,6 +379,11 @@ div[class*="preview"] div[class*="message"][class*="firstMessage"]::after {
   display: none;
 }
 
+/* Enable chat while scrolling */
+div[class*="chatContent"] > div[class*="messagesWrapper"] > div[class^="scrollerWrap"] > div[class^="scroller"][class*="scrolling"]>* {
+  pointer-events: initial;
+}
+
 /* COMPACT MODE */
 
 /* Message group start border */
@@ -413,8 +402,7 @@ div[class*="compact"][class*="groupStart"]::after {
   top: -10px;
   left: 20px;
   right: 20px;
-  height: 1px;
-  background-color: var(--background-modifier-accent);
+  border-bottom: thin solid var(--background-modifier-accent);
 }
 
 /* Background Flash */
@@ -430,9 +418,6 @@ div[class*="chatContent"] > div[class*="messagesWrapper"] div[class*="compact"] 
 /* Mentions */
 div[class*="chatContent"] > div[class*="messagesWrapper"] div[class*="mentioned"][class*="compact"] {
   background-color: var(--background-mentioned)!important;
-  border-radius: 3px;
-  margin: -.1rem 0;
-  padding: .1rem 0;
 }
 
 div[class*="chatContent"] > div[class*="messagesWrapper"] div[class*="mentioned"][class*="compact"]::before {
@@ -440,13 +425,14 @@ div[class*="chatContent"] > div[class*="messagesWrapper"] div[class*="mentioned"
 }
 
 /* Text Padding */
-div[class*="preview"] div[class*="compact"] > div[class*="container"],
-div[class*="chatContent"] > div[class*="messagesWrapper"] div[class*="compact"] > div[class*="container"] {
-  text-indent: calc(-80px - -10px);
+div[class*="chatContent"] > div[class*="messagesWrapper"] div[class*="compact"] {
+  padding: 0;
+  padding-left: 80px;
+  padding-right: 10px;
 }
 
 /* Embeds & Reactions */
-div[class*="compact"] > div[class*="container"] > div[class*="container"]:not([class*="markup"]) {
+div[class*="compact"] > div[class*="container"]:not([class*="button"]) {
   padding-top: 6px;
   padding-bottom: 6px;
   grid-row-gap: 6px;
@@ -459,12 +445,12 @@ div[class*="chatContent"] > div[class*="messagesWrapper"] div[class*="compact"][
 }
 
 /* Uploading */
-div[class*="chatContent"] > div[class*="messagesWrapper"] div[class*="compact"] ~ div[class*="cozy"]:not([class*="message"]) > div[class*="container"]:only-child > h2:first-child::after {
-  top: -10px;
+div[class*="chatContent"] > div[class*="messagesWrapper"] div[class^="wrapper"][class*="cozy"]:not([class*="message"]):not([class*="system"]):not([class*="backgroundFlash"]) {
+  margin-top: 20px;
 }
 
-div[class*="chatContent"] > div[class*="messagesWrapper"] div[class*="compact"] ~ div[class*="cozy"]:not([class*="message"]) > div[class*="container"]:only-child > h2:first-child + div[class*="markup"] {
-  margin-top: 20px;
+div[class*="chatContent"] > div[class*="messagesWrapper"] div[class^="wrapper"][class*="cozy"]:not([class*="message"]):not([class*="system"]):not([class*="backgroundFlash"]) > div[class*="contents"] > h2[class*="header"]::before {
+  top: -10px;
 }
 
 /* Input */
