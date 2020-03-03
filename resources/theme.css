@@ -297,7 +297,6 @@ div[class*="chatContent"] > div[class*="messagesWrapper"] div[class*="message"][
 div[class*="chatContent"] > div[class*="messagesWrapper"] div[class^="wrapper"][class*="cozy"]:not([class*="message"]):not([class*="system"]):not([class*="backgroundFlash"]) {
   padding: 0;
   padding-left: 80px;
-  margin-top: 40px;
 }
 
 div[class*="chatContent"] > div[class*="messagesWrapper"] div[class^="wrapper"][class*="cozy"]:not([class*="message"]):not([class*="system"]):not([class*="backgroundFlash"]) > div[class*="contents"] > img {
@@ -306,6 +305,7 @@ div[class*="chatContent"] > div[class*="messagesWrapper"] div[class^="wrapper"][
   margin-right: 20px;
   filter: none!important;
   transform: none!important;
+  margin-top: 40px;
 }
 
 div[class*="chatContent"] > div[class*="messagesWrapper"] div[class^="wrapper"][class*="cozy"]:not([class*="message"]):not([class*="system"]):not([class*="backgroundFlash"]) > div[class*="contents"] > h2[class*="header"] > span[class*="username"] {
@@ -319,6 +319,7 @@ div[class*="chatContent"] > div[class*="messagesWrapper"] div[class^="wrapper"][
 div[class*="chatContent"] > div[class*="messagesWrapper"] div[class^="wrapper"][class*="cozy"]:not([class*="message"]):not([class*="system"]):not([class*="backgroundFlash"]) > div[class*="contents"] > h2[class*="header"] {
   overflow: visible;
   position: initial;
+  margin-top: 40px;
 }
 
 div[class*="chatContent"] > div[class*="messagesWrapper"] div[class^="wrapper"][class*="cozy"]:not([class*="message"]):not([class*="system"]):not([class*="backgroundFlash"]) > div[class*="contents"] > h2[class*="header"]::before {
@@ -327,7 +328,7 @@ div[class*="chatContent"] > div[class*="messagesWrapper"] div[class^="wrapper"][
   display: block;
   left: 20px;
   right: 20px;
-  top: -20px;
+  top: 20px;
   border-bottom: thin solid var(--background-modifier-accent);
 }
 
@@ -335,6 +336,51 @@ div[class*="chatContent"] > div[class*="messagesWrapper"] div[class^="wrapper"][
   padding: 8px 0;
   padding-left: 80px;
   margin-left: -80px;
+}
+
+/* Blocked */
+div[class*="chatContent"] > div[class*="messagesWrapper"] div[class^="groupStart"]:not([class*="message"]):not([class*="system"]):not([class*="backgroundFlash"]):not([class*="wrapper"]) {
+  margin-top: 40px;
+  position: relative;
+}
+
+div[class*="chatContent"] > div[class*="messagesWrapper"] div[class^="groupStart"]:not([class*="message"]):not([class*="system"]):not([class*="backgroundFlash"]):not([class*="wrapper"])::after {
+  content: '';
+  position: absolute;
+  top: -20px;
+  left: 20px;
+  right: 20px;
+  border-bottom: thin solid var(--background-modifier-accent);
+}
+
+div[class*="chatContent"] > div[class*="messagesWrapper"] div[class^="groupStart"]:not([class*="message"]):not([class*="system"]):not([class*="backgroundFlash"]):not([class*="wrapper"]) div[class^="blockedSystemMessage"] {
+  padding: 0;
+}
+
+div[class*="chatContent"] > div[class*="messagesWrapper"] div[class^="groupStart"]:not([class*="message"]):not([class*="system"]):not([class*="backgroundFlash"]):not([class*="wrapper"]) div[class^="blockedSystemMessage"] > div[class^="content"] {
+  font-size: 14px;
+}
+
+div[class*="chatContent"] > div[class*="messagesWrapper"] div[class^="groupStart"][class*="expanded"]:not([class*="message"]):not([class*="system"]):not([class*="backgroundFlash"]):not([class*="wrapper"]) {
+  background-color: transparent;
+}
+
+div[class*="chatContent"] > div[class*="messagesWrapper"] div[class^="groupStart"][class*="expanded"]:not([class*="message"]):not([class*="system"]):not([class*="backgroundFlash"]):not([class*="wrapper"])::before {
+  content: '';
+  position: absolute;
+  top: -20px;
+  height: calc(100% + 40px);
+  width: 100%;
+  background-color: var(--background-message-hover);
+  z-index: -1;
+}
+
+div[class*="chatContent"] > div[class*="messagesWrapper"] div[class*="divider"] + div[class^="groupStart"]:not([class*="message"]):not([class*="system"]):not([class*="backgroundFlash"]):not([class*="wrapper"]) {
+  margin-top: 0;
+}
+
+div[class*="chatContent"] > div[class*="messagesWrapper"] div[class*="divider"] + div[class^="groupStart"]:not([class*="message"]):not([class*="system"]):not([class*="backgroundFlash"]):not([class*="wrapper"])::after {
+  display: none;
 }
 
 /* Input */
@@ -442,15 +488,6 @@ div[class*="compact"] > div[class*="container"]:not([class*="button"]) {
 div[class*="chatContent"] > div[class*="messagesWrapper"] div[class*="compact"][class*="localBot"]::before {
   top: -10px;
   height: calc(100% + 20px);
-}
-
-/* Uploading */
-div[class*="chatContent"] > div[class*="messagesWrapper"] div[class^="wrapper"][class*="cozy"]:not([class*="message"]):not([class*="system"]):not([class*="backgroundFlash"]) {
-  margin-top: 20px;
-}
-
-div[class*="chatContent"] > div[class*="messagesWrapper"] div[class^="wrapper"][class*="cozy"]:not([class*="message"]):not([class*="system"]):not([class*="backgroundFlash"]) > div[class*="contents"] > h2[class*="header"]::before {
-  top: -10px;
 }
 
 /* Input */
