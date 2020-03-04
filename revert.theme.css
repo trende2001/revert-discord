@@ -1,2 +1,9 @@
-/*//META{"name":"Revert Discord","description":"This theme auto-updates. To fetch the latest version, restart Discord.","author":"fluffy","version":"0"}*//**/
+/**
+ * @name Revert Discord
+ * @version 1.0
+ * @description This theme auto-updates. To fetch the latest version, restart Discord.
+ * @source https://github.com/fluffingtons/revert-discord
+ * @authorId 67319565150851072
+ * @author fluffy
+**/
 @import url(https://fluffingtons.github.io/revert-discord/resources/theme.css);
