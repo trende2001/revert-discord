@@ -1,3 +1,9 @@
+/* Version */
+#user-settings nav[class^="sidebar-"] > div > div[class^="info"]:last-child > div:first-child::before {
+  content: "Revert Theme (4/03/2019)";
+  display: block;
+}
+
 /* Message group start border */
 div[class*="cozyMessage"][class*="groupStart"] {
   margin-top: 40px!important;
@@ -9,7 +15,7 @@ div[class*="chatContent"] > div[class*="messagesWrapper"] div[class*="divider-"]
 }
 
 div[class*="cozyMessage"][class*="groupStart"]::after {
-  content: '';
+  content: "";
   position: absolute;
   top: -20px;
   left: 20px;
@@ -158,7 +164,7 @@ div[class*="cozyMessage"][class*="mentioned"] > div[class*="contents"] > div[cla
   position: absolute;
   top: 0;
   left: 0;
-  content: '';
+  content: "";
   width: 2px;
   background-color: rgba(250,166,26,.2);
   border-left: 4px solid #faa61a;
@@ -176,10 +182,15 @@ div[class*="cozyMessage"] > div[class*="contents"] > h2[class*="header"] span[cl
 }
 
 div[class*="cozyMessage"] > div[class*="contents"] img[class*="avatar"] {
-  margin-left: 4px;
-  margin-right: 20px;
+  width: 40px;
+  height: 40px;
+  top: 2px;
+  left: 0;
+  margin: 20px;
+  margin-top: 0;
   filter: none!important;
   transform: none!important;
+  -webkit-user-drag: none;
 }
 
 div[class*="cozyMessage"] > div[class*="contents"] img[class*="avatar"]:hover {
@@ -210,7 +221,7 @@ div[class*="chatContent"] > div[class*="messagesWrapper"] div[class*="cozyMessag
 }
 
 div[class*="chatContent"] > div[class*="messagesWrapper"] div[class*="message"] > div[class*="buttonContainer"] > div[class*="buttons"] > div[class*="wrapper"] {
-  height: 22px;
+  height: 1.375rem;
   background-color: transparent;
   box-shadow: none;
   display: flex;
@@ -223,16 +234,16 @@ div[class*="chatContent"] > div[class*="messagesWrapper"] div[class*="message"] 
 }
 
 div[class*="chatContent"] > div[class*="messagesWrapper"] div[class*="message"] > div[class*="buttonContainer"] > div[class*="buttons"] > div[class*="wrapper"] > div[class*="button"] {
-  height: 16px;
-  width: 16px;
-  min-width: 16px;
+  height: 1rem;
+  width: 1rem;
+  min-width: 1rem;
   padding: 0;
   background-color: transparent!important;
 }
 
 div[class*="chatContent"] > div[class*="messagesWrapper"] div[class*="message"] > div[class*="buttonContainer"] > div[class*="buttons"] > div[class*="wrapper"] > div[class*="button"] svg {
-  height: 16px;
-  width: 16px;
+  height: 1rem;
+  width: 1rem;
 }
 
 div[class*="chatContent"] > div[class*="messagesWrapper"] div[class*="message"] > div[class*="buttonContainer"] > div[class*="buttons"] > div[class*="wrapper"] > div[class*="button"] svg[name="OverflowMenuHorizontal"] {
@@ -241,8 +252,8 @@ div[class*="chatContent"] > div[class*="messagesWrapper"] div[class*="message"] 
 
 div[class*="chatContent"] > div[class*="messagesWrapper"] div[class*="message"] > div[class*="contents"] > div[class*="markup"]::before {
   content: "";
-  width: 32px;
-  height: 16px;
+  width: 2rem;
+  height: 1rem;
   display: inline-flex;
   float: right;
 }
@@ -323,7 +334,7 @@ div[class*="chatContent"] > div[class*="messagesWrapper"] div[class^="wrapper"][
 }
 
 div[class*="chatContent"] > div[class*="messagesWrapper"] div[class^="wrapper"][class*="cozy"]:not([class*="message"]):not([class*="system"]):not([class*="backgroundFlash"]) > div[class*="contents"] > h2[class*="header"]::before {
-  content: '';
+  content: "";
   position: absolute;
   display: block;
   left: 20px;
@@ -345,7 +356,7 @@ div[class*="chatContent"] > div[class*="messagesWrapper"] div[class^="groupStart
 }
 
 div[class*="chatContent"] > div[class*="messagesWrapper"] div[class^="groupStart"]:not([class*="message"]):not([class*="system"]):not([class*="backgroundFlash"]):not([class*="wrapper"])::after {
-  content: '';
+  content: "";
   position: absolute;
   top: -20px;
   left: 20px;
@@ -366,7 +377,7 @@ div[class*="chatContent"] > div[class*="messagesWrapper"] div[class^="groupStart
 }
 
 div[class*="chatContent"] > div[class*="messagesWrapper"] div[class^="groupStart"][class*="expanded"]:not([class*="message"]):not([class*="system"]):not([class*="backgroundFlash"]):not([class*="wrapper"])::before {
-  content: '';
+  content: "";
   position: absolute;
   top: -20px;
   height: calc(100% + 40px);
@@ -416,13 +427,33 @@ div[class*="chatContent"] > form[class*="form"] > div[class*="typing"] {
   right: 0;
 }
 
-/* Preview */
-div[class*="preview"] div[class*="compact"][class*="firstMessage"]  {
+/* Appearance Settings */
+#user-settings div[class^="contentRegion"] main[class^="contentColumn"] div[class^="children"] > div[class^="preview"] div[class*="compact"][class*="firstMessage"]  {
   margin-top: 0!important;
 }
 
-div[class*="preview"] div[class*="message"][class*="firstMessage"]::after {
+#user-settings div[class^="contentRegion"] main[class^="contentColumn"] div[class^="children"] > div[class^="preview"] div[class*="message"][class*="firstMessage"]::after {
   display: none;
+}
+
+#user-settings div[class^="contentRegion"] main[class^="contentColumn"] div[class^="children"] > div[class^="preview"] > div[class*="message"] {
+  padding: 0;
+  padding-left: 80px;
+}
+
+#user-settings div[class^="contentRegion"] main[class^="contentColumn"] div[class^="children"] > div[class^="preview"] ~ h2[class^="h2"][class*="marginTop60"] ~ div:not([class]) + div[class^="marginTop20"] {
+  cursor: not-allowed;
+}
+
+#user-settings div[class^="contentRegion"] main[class^="contentColumn"] div[class^="children"] > div[class^="preview"] ~ h2[class^="h2"][class*="marginTop60"] ~ div:not([class]) + div[class^="marginTop20"] > div {
+  pointer-events: none;
+  opacity: .6;
+}
+
+#user-settings div[class^="contentRegion"] main[class^="contentColumn"] div[class^="children"] > div[class^="preview"] ~ h2[class^="h2"][class*="marginTop60"] ~ div:not([class]) + div[class^="marginTop20"] > h5::after {
+  content: "(Disabled due to theme)";
+  color: #f04747;
+  margin-left: 4px;
 }
 
 /* Enable chat while scrolling */
@@ -443,7 +474,7 @@ div[class*="chatContent"] > div[class*="messagesWrapper"] div[class*="divider-"]
 }
 
 div[class*="compact"][class*="groupStart"]::after {
-  content: '';
+  content: "";
   position: absolute;
   top: -10px;
   left: 20px;
@@ -486,6 +517,20 @@ div[class*="compact"] > div[class*="container"]:not([class*="button"]) {
 
 /* Clyde */
 div[class*="chatContent"] > div[class*="messagesWrapper"] div[class*="compact"][class*="localBot"]::before {
+  top: -10px;
+  height: calc(100% + 20px);
+}
+
+/* Blocked */
+div[class*="chatContent"] > div[class*="messagesWrapper"] div[class^="groupStart"]:not([class*="message"]):not([class*="system"]):not([class*="backgroundFlash"]):not([class*="wrapper"]) {
+  margin-top: 20px;
+}
+
+div[class*="chatContent"] > div[class*="messagesWrapper"] div[class^="groupStart"]:not([class*="message"]):not([class*="system"]):not([class*="backgroundFlash"]):not([class*="wrapper"])::after {
+  top: -10px;
+}
+
+div[class*="chatContent"] > div[class*="messagesWrapper"] div[class^="groupStart"][class*="expanded"]:not([class*="message"]):not([class*="system"]):not([class*="backgroundFlash"]):not([class*="wrapper"])::before {
   top: -10px;
   height: calc(100% + 20px);
 }
