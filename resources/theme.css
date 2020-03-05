@@ -246,7 +246,7 @@ div[class*="chatContent"] > div[class*="messagesWrapper"] div[class*="message"] 
   width: 1rem;
 }
 
-div[class*="chatContent"] > div[class*="messagesWrapper"] div[class*="message"] > div[class*="buttonContainer"] > div[class*="buttons"] > div[class*="wrapper"] > div[class*="button"] svg[name="OverflowMenuHorizontal"] {
+div[class*="chatContent"] > div[class*="messagesWrapper"] div[class*="message"] > div[class*="buttonContainer"] > div[class*="buttons"] > div[class*="wrapper"] > div[class*="button"]:last-child svg {
   transform: rotate(90deg);
 }
 
