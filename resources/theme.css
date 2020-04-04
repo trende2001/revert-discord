@@ -383,7 +383,7 @@ main[class^="chatContent"] > div[class*="messagesWrapper"] div[class*="divider"]
 }
 
 /* Input */
-main[class^="chatContent"] > form[class*="form"] {
+main[class^="chatContent"] form[class*="form"] {
   border-top: 1px solid var(--background-modifier-accent);
   padding: 0;
   margin-left: 20px;
@@ -391,28 +391,28 @@ main[class^="chatContent"] > form[class*="form"] {
   margin-top: 0;
 }
 
-main[class^="chatContent"] > form[class*="form"] > div[class*="channelTextArea"],
-main[class^="chatContent"] > form[class*="form"] > div[class*="wrapper"] {
+main[class^="chatContent"] form[class*="form"] div[class*="channelTextArea"] {
   margin-top: 20px;
-  margin-bottom: 30px;;
+  margin-bottom: 30px;
 }
 
 main[class^="chatContent"] div[class*="jumpToPresentBar"] {
   padding: 0;
 }
 
-main[class^="chatContent"] > div[class*="messagesWrapper"] div[class*="scroller"]::after {
+main[class^="chatContent"] div[class*="messagesWrapper"] div[class*="scroller"]::after {
   display: none;
 }
 
-main[class^="chatContent"] > div[class*="messagesWrapper"] div[class*="scroller"] > div:not([class*="scroller"]):last-child {
-  margin-bottom: calc(var(--f-msg-spacing) / 2);
-}
-
-main[class^="chatContent"] > form[class*="form"] > div[class*="typing"] {
+main[class^="chatContent"] form[class*="form"] div[class*="typing"] {
   height: 30px;
   left: 0;
   right: 0;
+}
+
+/* End of Message Margin */
+main[class^="chatContent"] div[class*="messagesWrapper"] div[class*="scroller"] > div:not([class*="scroller"]):last-child {
+  margin-bottom: calc(var(--f-msg-spacing) / 2);
 }
 
 /* Enable chat while scrolling */
