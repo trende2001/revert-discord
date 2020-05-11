@@ -1,6 +1,6 @@
 /* Version */
 #user-settings nav[class^="sidebar-"] > div > div[class^="info"]:last-child > div:first-child::before {
-  content: "Revert Theme (4/04/2019)";
+  content: "Revert Theme (11/05/2019)";
   display: block;
 }
 
@@ -411,8 +411,8 @@ main[class^="chatContent"] form[class*="form"] div[class*="typing"] {
 }
 
 /* End of Message Margin */
-main[class^="chatContent"] div[class*="messagesWrapper"] div[class*="scroller"] > div:not([class*="scroller"]):last-child {
-  margin-bottom: calc(var(--f-msg-spacing) / 2);
+main[class^="chatContent"] div[class*="messagesWrapper"] div[class*="scroller"] > div[class*="scrollerSpacer"] {
+  height: calc(var(--f-msg-spacing) / 2);
 }
 
 /* Enable chat while scrolling */
