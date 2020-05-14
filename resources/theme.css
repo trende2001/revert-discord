@@ -1,6 +1,6 @@
 /* Version */
 #user-settings nav[class^="sidebar-"] > div > div[class^="info"]:last-child > div:first-child::before {
-  content: "Revert Theme (11/05/2019)";
+  content: "Revert Theme (14/05/2019)";
   display: block;
 }
 
@@ -184,7 +184,7 @@ div[class*="cozyMessage"] > div[class*="contents"] > div[class*="markup"] {
 }
 
 /* Mentions */
-div[class*="cozyMessage"][class*="mentioned"]::before {
+div[class*="message"][class*="mentioned"]::before {
   display: none;
 }
 
@@ -461,6 +461,12 @@ main[class^="chatContent"] > div[class*="messagesWrapper"] > div[class^="scrolle
 }
 
 /* COMPACT */
+
+/* Mentions */
+div[class*="compact"][class*="mentioned"] > div[class*="contents"] {
+  background-color: var(--background-mentioned);
+  border-radius: 0 3px 3px 0;
+}
 
 /* Appearance */
 #user-settings div[class*="contentRegion"] main[class*="contentColumn"] div[class*="children"] > div[class*="preview"][class*="compactPreview"] ~ h2[class*="h2"][class*="marginTop60"] ~ div:not([class]) + div[class*="marginTop20"] div[class*="track"] > div[class*="mark"]:nth-child(1) > [class*="markValue"]::after {
