@@ -1,6 +1,6 @@
 /* Version */
 #user-settings nav[class^="sidebar-"] > div > div[class^="info"]:last-child > div:first-child::before {
-  content: "Revert Theme (14/05/2019)";
+  content: "Revert Theme (22/05/2019)";
   display: block;
 }
 
