@@ -1,6 +1,6 @@
 /* Version */
-#user-settings nav[class^="sidebar-"] > div > div[class^="info"]:last-child > div:first-child::before {
-  content: "Revert Theme (22/05/2019)";
+#user-settings nav[class^="sidebar-"] div[class^="info"]:last-child > div:last-child::after {
+  content: "Revert Theme (18/06/2020)";
   display: block;
 }
 
@@ -50,26 +50,16 @@ div[class*="divider-"] + div[class*="backgroundFlash"] > div[class*="groupStart"
 }
 
 /* Welcome Message */
-main[class^="chatContent"] > div[class*="messagesWrapper"] div[class*="welcomeMessage"] {
-  padding: 20px 20px 0;
+main[class^="chatContent"] > div[class*="messagesWrapper"] #messagesNavigationDescription + div[class*="container"] {
+  padding: 20px;
 }
 
-main[class^="chatContent"] > div[class*="messagesWrapper"] div[class*="welcomeMessage"] > div[class*="emptyMessage"] {
-  padding-bottom: 0;
-  border-bottom: none;
-}
-
-main[class^="chatContent"] > div[class*="messagesWrapper"] div[class*="scroller"] > div[class*="placeholder"] + div[class*="container"] {
-  padding: 20px 20px 0;
-}
-
-main[class^="chatContent"] > div[class*="messagesWrapper"] div[class*="scroller"] > div[class*="placeholder"] + div[class*="default"] {
-  margin: 0 20px;
-  border-bottom: none;
+main[class^="chatContent"] > div[class*="messagesWrapper"] #messagesNavigationDescription + div[class*="container"] > div[class*="emptyMessage"] {
+  display: none;
 }
 
 /* Beginning of Channel */
-main[class^="chatContent"] > div[class*="messagesWrapper"] #messagesNavigationDescription + div[class^="default"] {
+main[class^="chatContent"] > div[class*="messagesWrapper"] #messagesNavigationDescription + div[class*="default"] {
   margin: 0 20px;
   border-bottom: 0px;
 }
