@@ -51,10 +51,16 @@ div[class*="divider-"] + div[class*="backgroundFlash"] > div[class*="groupStart"
 
 /* Welcome Message */
 main[class^="chatContent"] > div[class*="messagesWrapper"] #messagesNavigationDescription + div[class*="container"] {
-  padding: 20px;
+  padding: 20px 20px 0;
 }
 
 main[class^="chatContent"] > div[class*="messagesWrapper"] #messagesNavigationDescription + div[class*="container"] > div[class*="emptyMessage"] {
+  border: none;
+  padding: 0;
+  height: 20px;
+}
+
+main[class^="chatContent"] > div[class*="messagesWrapper"] #messagesNavigationDescription + div[class*="container"] > div[class*="emptyMessage"] > * {
   display: none;
 }
 
