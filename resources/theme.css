@@ -1,6 +1,6 @@
 /* Version */
 #user-settings nav[class^="sidebar-"] div[class^="info"]:last-child > div:last-child::after {
-  content: "Revert Theme (18/06/2020)";
+  content: "Revert Theme (18/08/2020)";
   display: block;
 }
 
@@ -168,7 +168,7 @@ div[class*="cozyMessage"] > div[class*="contents"] img[class*="avatar"]:hover {
 /* Text Padding */
 div[class*="message-"][class*="wrapper-"] {
   padding: 0;
-  padding-left: 80px;
+  padding-left: 80px!important;
   padding-right: 10px!important;
 }
 
@@ -256,7 +256,9 @@ div[class*="cozyMessage"] > div[class*="container"]:not([class*="button"]) {
 }
 
 main[class^="chatContent"] > div[class*="messagesWrapper"] div[class*="message"] div[class*="reactions"] {
+  margin: -2px 0;
   margin-left: -2px;
+  padding: 0;
 }
 
 main[class^="chatContent"] > div[class*="messagesWrapper"] div[class*="message"] div[class*="reactions"] > div > div[class*="reaction"] {
@@ -264,15 +266,15 @@ main[class^="chatContent"] > div[class*="messagesWrapper"] div[class*="message"]
   margin: 2px;
 }
 
-main[class^="chatContent"] > div[class*="messagesWrapper"] div[class*="message"] div[class*="reactions"] > div > div[class*="reaction"] > div[class*="reactionInner"] {
+main[class^="chatContent"] > div[class*="messagesWrapper"] div[class*="message"] div[class*="reactions"] > div > div[class*="reaction"] div[class*="reactionInner"] {
   padding: 0 6px;
 }
 
-main[class^="chatContent"] > div[class*="messagesWrapper"] div[class*="message"] div[class*="reactions"] > div > div[class*="reaction"] > div[class*="reactionInner"] > img {
+main[class^="chatContent"] > div[class*="messagesWrapper"] div[class*="message"] div[class*="reactions"] > div > div[class*="reaction"] div[class*="reactionInner"] > img {
   margin: 3px 0;
 }
 
-main[class^="chatContent"] > div[class*="messagesWrapper"] div[class*="message"] div[class*="reactions"] > div > div[class*="reaction"] > div[class*="reactionInner"] > div[class*="reactionCount"] {
+main[class^="chatContent"] > div[class*="messagesWrapper"] div[class*="message"] div[class*="reactions"] > div > div[class*="reaction"] div[class*="reactionInner"] > div[class*="reactionCount"] {
   margin-left: 6px;
 }
 
