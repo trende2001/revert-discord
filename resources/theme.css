@@ -1,6 +1,6 @@
 /* Version */
 #user-settings nav[class^="sidebar-"] div[class^="info"]:last-child > div:last-child::after {
-  content: "Revert Theme (18/08/2020)";
+  content: "Revert Theme (1/09/2020)";
   display: block;
 }
 
@@ -52,6 +52,7 @@ div[class*="divider-"] + div[class*="backgroundFlash"] > div[class*="groupStart"
 /* Welcome Message */
 main[class^="chatContent"] > div[class*="messagesWrapper"] #messagesNavigationDescription + div[class*="container"] {
   padding: 20px 20px 0;
+  border: none;
 }
 
 main[class^="chatContent"] > div[class*="messagesWrapper"] #messagesNavigationDescription + div[class*="container"] > div[class*="emptyMessage"] {
@@ -236,7 +237,9 @@ main[class^="chatContent"] > div[class*="messagesWrapper"] div[class*="message"]
   width: 1rem;
 }
 
-main[class^="chatContent"] > div[class*="messagesWrapper"] div[class*="message"] > div[class*="buttonContainer"] > div[class*="buttons"] > div[class*="wrapper"] > div[class*="button"]:last-child svg {
+main[class^="chatContent"] > div[class*="messagesWrapper"] div[class*="message"] > div[class*="buttonContainer"] > div[class*="buttons"] > div[class*="wrapper"] > div[class*="button"]:last-child:nth-child(1) svg,
+main[class^="chatContent"] > div[class*="messagesWrapper"] div[class*="message"] > div[class*="buttonContainer"] > div[class*="buttons"] > div[class*="wrapper"] > div[class*="button"]:last-child:nth-child(2) svg,
+main[class^="chatContent"] > div[class*="messagesWrapper"] div[class*="message"] > div[class*="buttonContainer"] > div[class*="buttons"] > div[class*="wrapper"] > div[class*="button"]:last-child:nth-child(3) svg {
   transform: rotate(90deg);
 }
 
@@ -376,6 +379,22 @@ main[class^="chatContent"] > div[class*="messagesWrapper"] div[class*="divider"]
 
 main[class^="chatContent"] > div[class*="messagesWrapper"] div[class*="divider"] + div[class^="groupStart"]:not([class*="message"]):not([class*="system"]):not([class*="backgroundFlash"]):not([class*="wrapper"])::after {
   display: none;
+}
+
+/* System */
+main[class^="chatContent"] div[class*="message-"][class*="systemMessage-"] div[class*="container-"] {
+  padding: 0;
+}
+
+main[class^="chatContent"] div[class*="message-"][class*="systemMessage-"] + div[class*="systemMessage-"] {
+  margin-top: .125rem;
+}
+
+main[class^="chatContent"] div[class*="message-"][class*="systemMessage-"] div[class*="iconContainer-"],
+div[class*="blockedSystemMessage-"] div[class*="iconContainer-"] {
+  width: 80px;
+  padding-top: 0;
+  margin-right: 0;
 }
 
 /* Input */
