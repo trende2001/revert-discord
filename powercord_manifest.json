@@ -1,0 +1,8 @@
+{
+    "name": "Revert Discord",
+    "description": "Restore the old message style of Discord's chat.",
+    "version": "1.0.0",
+    "author": "fluffy#0404",
+    "theme": "revert.theme.css",
+    "license": "MIT"
+ }

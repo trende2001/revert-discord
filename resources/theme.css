@@ -1,6 +1,6 @@
 /* Version */
 #user-settings nav[class^="sidebar-"] div[class^="info"]:last-child > div:last-child::after {
-  content: "Revert Theme (1/09/2020)";
+  content: "Revert Theme (15/09/2020)";
   display: block;
 }
 
@@ -253,9 +253,9 @@ main[class^="chatContent"] > div[class*="messagesWrapper"] div[class*="message"]
 
 /* Embeds & Reactions */
 div[class*="cozyMessage"] > div[class*="container"]:not([class*="button"]) {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  grid-row-gap: 8px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  grid-row-gap: 6px;
 }
 
 main[class^="chatContent"] > div[class*="messagesWrapper"] div[class*="message"] div[class*="reactions"] {
