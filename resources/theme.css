@@ -1,6 +1,6 @@
 /* Version */
 #user-settings nav[class^="sidebar-"] div[class^="info"]:last-child > div:last-child::after {
-  content: "Revert Theme (15/09/2020)";
+  content: "Revert Theme (16/09/2020)";
   display: block;
 }
 
@@ -27,7 +27,7 @@
 
 /* Message group border */
 [class*="group-spacing"] div[class*="groupStart"] {
-  margin-top: var(--f-msg-spacing);
+  margin-top: var(--f-msg-spacing)!important;
 }
 
 [class*="group-spacing"] div[class*="groupStart"]::after {
@@ -41,7 +41,7 @@
 
 div[class^="divider-"] + [class*="groupStart"],
 div[class*="divider-"] + div[class*="backgroundFlash"] > div[class*="groupStart"] {
-  margin-top: 0px;
+  margin-top: 0px!important;
 }
 
 div[class^="divider-"] + [class*="groupStart"]::after,
@@ -135,7 +135,7 @@ main[class^="chatContent"] > div[class^="messagesWrapper"] div[class^="divider-"
 }
 
 /* Remove Highlight & Timestamp */
-div[class*="message-"][class*="wrapper-"] {
+div[class*="message-"][class*="wrapper-"]:not([class*="replying"]) {
   background-color: transparent!important;
 }
 
@@ -152,7 +152,7 @@ div[class*="cozyMessage"] > div[class*="contents"] > h2[class*="header"] span[cl
   margin-left: 0;
 }
 
-div[class*="cozyMessage"] > div[class*="contents"] img[class*="avatar"] {
+div[class*="cozyMessage"] > div[class*="contents"] img[class*="avatar-"]:not([class*="reply"]) {
   width: 40px;
   height: 40px;
   top: 2px;
@@ -162,7 +162,7 @@ div[class*="cozyMessage"] > div[class*="contents"] img[class*="avatar"] {
   -webkit-user-drag: none;
 }
 
-div[class*="cozyMessage"] > div[class*="contents"] img[class*="avatar"]:hover {
+div[class*="cozyMessage"] > div[class*="contents"] img[class*="avatar-"]:not([class*="reply"]):hover {
   opacity: .8;
 }
 
@@ -237,9 +237,7 @@ main[class^="chatContent"] > div[class*="messagesWrapper"] div[class*="message"]
   width: 1rem;
 }
 
-main[class^="chatContent"] > div[class*="messagesWrapper"] div[class*="message"] > div[class*="buttonContainer"] > div[class*="buttons"] > div[class*="wrapper"] > div[class*="button"]:last-child:nth-child(1) svg,
-main[class^="chatContent"] > div[class*="messagesWrapper"] div[class*="message"] > div[class*="buttonContainer"] > div[class*="buttons"] > div[class*="wrapper"] > div[class*="button"]:last-child:nth-child(2) svg,
-main[class^="chatContent"] > div[class*="messagesWrapper"] div[class*="message"] > div[class*="buttonContainer"] > div[class*="buttons"] > div[class*="wrapper"] > div[class*="button"]:last-child:nth-child(3) svg {
+main[class^="chatContent"] > div[class*="messagesWrapper"] div[class*="message"] > div[class*="buttonContainer"] > div[class*="buttons"] > div[class*="wrapper"] > div[class*="button"][aria-expanded$="e"]:last-child svg {
   transform: rotate(90deg);
 }
 
@@ -301,6 +299,19 @@ main[class^="chatContent"] > div[class*="messagesWrapper"] div[class*="message-"
 main[class^="chatContent"] > div[class*="messagesWrapper"] div[class*="message-"][class*="localBot"] div[class*="localBotMessage"] {
   margin-top: 0;
   margin-bottom: -8px;
+}
+
+/* Replies */
+div[class*="message-"][class*="wrapper-"][class*="replying-"]::before {
+  content: none;
+}
+
+div[class*="message-"][class*="wrapper-"] [class*="replyLink-"] {
+  margin-left: -.1rem;
+}
+
+div[class*="message-"][class*="wrapper-"] [class*="replyUsername-"] {
+  margin-right: .3rem;
 }
 
 /* Uploading */
