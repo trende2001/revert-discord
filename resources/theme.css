@@ -1,6 +1,6 @@
 /* Version */
-#user-settings nav[class^="sidebar-"] div[class^="info"]:last-child > div:last-child::after {
-  content: "Revert Theme (16/09/2020)";
+div[class*="sidebar"] nav[class^="sidebar-"] div[class^="info"]:last-child > div:last-child::after {
+  content: "Revert Theme (17/11/2020)";
   display: block;
 }
 
@@ -144,25 +144,25 @@ div[class*="cozyMessage"] span[class*="timestampVisibleOnHover"] {
 }
 
 /* Header & Avatar */
-div[class*="cozyMessage"] > div[class*="contents"] > h2[class*="header"] span[class*="username"] {
+div[class*="cozyMessage"] > div[class*="contents"] > h2[class*="header"] > span[class*="headerText"] {
   margin-right: .3rem;
 }
 
-div[class*="cozyMessage"] > div[class*="contents"] > h2[class*="header"] span[class*="timestamp"] {
+div[class*="cozyMessage"] > div[class*="contents"] > h2[class*="header"] > span[class*="timestamp"] {
   margin-left: 0;
 }
 
-div[class*="cozyMessage"] > div[class*="contents"] img[class*="avatar-"]:not([class*="reply"]) {
+div[class*="cozyMessage"] > div[class*="contents"] img[class*="avatar-"] {
   width: 40px;
   height: 40px;
-  top: 2px;
+  margin-top: 2px;
   left: 20px;
   filter: none!important;
   transform: none!important;
   -webkit-user-drag: none;
 }
 
-div[class*="cozyMessage"] > div[class*="contents"] img[class*="avatar-"]:not([class*="reply"]):hover {
+div[class*="cozyMessage"] > div[class*="contents"] img[class*="avatar-"]:hover {
   opacity: .8;
 }
 
@@ -284,34 +284,34 @@ main[class^="chatContent"] > div[class*="messagesWrapper"] div[class*="message"]
 }
 
 /* Clyde */
-main[class^="chatContent"] > div[class*="messagesWrapper"] div[class*="message-"][class*="localBot"]::before {
+main[class^="chatContent"] > div[class*="messagesWrapper"] div[class*="message-"][class*="ephemeral"]::before {
+  content: "";
+  position: absolute;
+  left: 0;
   top: calc(-1 * var(--f-msg-spacing) / 2);
   height: calc(100% + var(--f-msg-spacing));
   width: 100%;
   background: linear-gradient(90deg,var(--background-secondary) -40%,transparent 50%);
 }
 
-main[class^="chatContent"] > div[class*="messagesWrapper"] div[class*="message-"][class*="localBot"] div[class^="markup"],
-main[class^="chatContent"] > div[class*="messagesWrapper"] div[class*="message-"][class*="localBot"] div[class^="container"] {
+main[class^="chatContent"] > div[class*="messagesWrapper"] div[class*="message-"][class*="ephemeral"] div[class^="markup"],
+main[class^="chatContent"] > div[class*="messagesWrapper"] div[class*="message-"][class*="ephemeral"] div[class^="container"] {
   position: relative;
 }
 
-main[class^="chatContent"] > div[class*="messagesWrapper"] div[class*="message-"][class*="localBot"] div[class*="localBotMessage"] {
+main[class^="chatContent"] > div[class*="messagesWrapper"] div[class*="message-"][class*="ephemeral"] div[class*="localBotMessage"] {
   margin-top: 0;
   margin-bottom: -8px;
 }
 
 /* Replies */
-div[class*="message-"][class*="wrapper-"][class*="replying-"]::before {
+div[class*="message-"][class*="wrapper-"] > div[class*="repliedMessage"]::before {
+  --avatar-size: 40px;
+  --gutter: 20px;
+}
+
+div[class*="message-"][class*="replying"]::before {
   content: none;
-}
-
-div[class*="message-"][class*="wrapper-"] [class*="replyLink-"] {
-  margin-left: -.1rem;
-}
-
-div[class*="message-"][class*="wrapper-"] [class*="replyUsername-"] {
-  margin-right: .3rem;
 }
 
 /* Uploading */
