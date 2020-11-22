@@ -1,6 +1,6 @@
 /* Version */
 div[class*="sidebar"] nav[class^="sidebar-"] div[class^="info"]:last-child > div:last-child::after {
-  content: "Revert Theme (17/11/2020)";
+  content: "Revert Theme (22/11/2020)";
   display: block;
 }
 
@@ -311,8 +311,8 @@ div[class*="message-"][class*="wrapper-"] > div[class*="repliedMessage"]::before
 }
 
 div[class*="message-"][class*="replying"]::before {
-  content: none;
-}
+  display: none;
+} 
 
 /* Uploading */
 main[class^="chatContent"] > div[class*="messagesWrapper"] div[class^="wrapper"][class*="cozy"]:not([class*="message"]):not([class*="system"]):not([class*="backgroundFlash"]) {
@@ -406,6 +406,7 @@ div[class*="blockedSystemMessage-"] div[class*="iconContainer-"] {
   width: 80px;
   padding-top: 0;
   margin-right: 0;
+  height: 1.375rem;
 }
 
 /* Input */
@@ -447,42 +448,42 @@ main[class^="chatContent"] > div[class*="messagesWrapper"] > div[class^="scrolle
 }
 
 /* Appearance */
-#user-settings div[class*="contentRegion"] main[class*="contentColumn"] div[class*="children"] > div[class*="preview"] div[class*="firstMessage-"] {
+div[aria-label="USER_SETTINGS"] div[class*="contentRegion"] main[class*="contentColumn"] div[class*="children"] > div[class*="preview"] div[class*="firstMessage-"] {
   margin-top: 0!important;
 }
 
-#user-settings div[class*="contentRegion"] main[class*="contentColumn"] div[class*="children"] > div[class*="preview"] div[class*="firstMessage-"]::after {
+div[aria-label="USER_SETTINGS"] div[class*="contentRegion"] main[class*="contentColumn"] div[class*="children"] > div[class*="preview"] div[class*="firstMessage-"]::after {
   display: none;
 }
 
-#user-settings div[class*="contentRegion"] main[class*="contentColumn"] div[class*="children"] > div[class*="preview"] ~ h2[class*="h2"][class*="marginTop60"] ~ div:not([class]) + div[class*="marginTop20"] div[class*="track"] > div[class*="mark"] > div[class*="markValue"] {
+div[aria-label="USER_SETTINGS"] div[class*="contentRegion"] main[class*="contentColumn"] div[class*="children"] > div[class*="preview"] ~ h2[class*="h2"][class*="marginTop60"] ~ div:not([class]) + div[class*="marginTop20"] div[class*="track"] > div[class*="mark"] > div[class*="markValue"] {
   letter-spacing: -9999px;
   color: transparent;
 }
 
-#user-settings div[class*="contentRegion"] main[class*="contentColumn"] div[class*="children"] > div[class*="preview"] ~ h2[class*="h2"][class*="marginTop60"] ~ div:not([class]) + div[class*="marginTop20"] div[class*="track"] > div[class*="mark"] > div[class*="markValue"]::after {
+div[aria-label="USER_SETTINGS"] div[class*="contentRegion"] main[class*="contentColumn"] div[class*="children"] > div[class*="preview"] ~ h2[class*="h2"][class*="marginTop60"] ~ div:not([class]) + div[class*="marginTop20"] div[class*="track"] > div[class*="mark"] > div[class*="markValue"]::after {
   letter-spacing: 0;
   color: var(--text-muted);
 }
 
-#user-settings div[class*="contentRegion"] main[class*="contentColumn"] div[class*="children"] > div[class*="preview"] ~ h2[class*="h2"][class*="marginTop60"] ~ div:not([class]) + div[class*="marginTop20"] div[class*="track"] > div[class*="mark"]:nth-child(1) > [class*="markValue"]::after {
+div[aria-label="USER_SETTINGS"] div[class*="contentRegion"] main[class*="contentColumn"] div[class*="children"] > div[class*="preview"] ~ h2[class*="h2"][class*="marginTop60"] ~ div:not([class]) + div[class*="marginTop20"] div[class*="track"] > div[class*="mark"]:nth-child(1) > [class*="markValue"]::after {
   content: "20px";
 }
 
-#user-settings div[class*="contentRegion"] main[class*="contentColumn"] div[class*="children"] > div[class*="preview"] ~ h2[class*="h2"][class*="marginTop60"] ~ div:not([class]) + div[class*="marginTop20"] div[class*="track"] > div[class*="mark"]:nth-child(2) > [class*="markValue"]::after {
+div[aria-label="USER_SETTINGS"] div[class*="contentRegion"] main[class*="contentColumn"] div[class*="children"] > div[class*="preview"] ~ h2[class*="h2"][class*="marginTop60"] ~ div:not([class]) + div[class*="marginTop20"] div[class*="track"] > div[class*="mark"]:nth-child(2) > [class*="markValue"]::after {
   content: "25px";
 }
 
-#user-settings div[class*="contentRegion"] main[class*="contentColumn"] div[class*="children"] > div[class*="preview"] ~ h2[class*="h2"][class*="marginTop60"] ~ div:not([class]) + div[class*="marginTop20"] div[class*="track"] > div[class*="mark"]:nth-child(3) > [class*="markValue"]::after {
+div[aria-label="USER_SETTINGS"] div[class*="contentRegion"] main[class*="contentColumn"] div[class*="children"] > div[class*="preview"] ~ h2[class*="h2"][class*="marginTop60"] ~ div:not([class]) + div[class*="marginTop20"] div[class*="track"] > div[class*="mark"]:nth-child(3) > [class*="markValue"]::after {
   content: "30px";
 }
 
-#user-settings div[class*="contentRegion"] main[class*="contentColumn"] div[class*="children"] > div[class*="preview"] ~ h2[class*="h2"][class*="marginTop60"] ~ div:not([class]) + div[class*="marginTop20"] div[class*="track"] > div[class*="mark"]:nth-child(4) > [class*="markValue"]::after {
+div[aria-label="USER_SETTINGS"] div[class*="contentRegion"] main[class*="contentColumn"] div[class*="children"] > div[class*="preview"] ~ h2[class*="h2"][class*="marginTop60"] ~ div:not([class]) + div[class*="marginTop20"] div[class*="track"] > div[class*="mark"]:nth-child(4) > [class*="markValue"]::after {
   content: "40px";
   color: #43b581;
 }
 
-#user-settings div[class*="contentRegion"] main[class*="contentColumn"] div[class*="children"] > div[class*="preview"] ~ h2[class*="h2"][class*="marginTop60"] ~ div:not([class]) + div[class*="marginTop20"] div[class*="track"] > div[class*="mark"]:nth-child(5) > [class*="markValue"]::after {
+div[aria-label="USER_SETTINGS"] div[class*="contentRegion"] main[class*="contentColumn"] div[class*="children"] > div[class*="preview"] ~ h2[class*="h2"][class*="marginTop60"] ~ div:not([class]) + div[class*="marginTop20"] div[class*="track"] > div[class*="mark"]:nth-child(5) > [class*="markValue"]::after {
   content: "50px";
 }
 
@@ -495,10 +496,10 @@ div[class*="compact"][class*="mentioned"] > div[class*="contents"] {
 }
 
 /* Appearance */
-#user-settings div[class*="contentRegion"] main[class*="contentColumn"] div[class*="children"] > div[class*="preview"][class*="compactPreview"] ~ h2[class*="h2"][class*="marginTop60"] ~ div:not([class]) + div[class*="marginTop20"] div[class*="track"] > div[class*="mark"]:nth-child(1) > [class*="markValue"]::after {
+div[aria-label="USER_SETTINGS"] div[class*="contentRegion"] main[class*="contentColumn"] div[class*="children"] > div[class*="preview"][class*="compactPreview"] ~ h2[class*="h2"][class*="marginTop60"] ~ div:not([class]) + div[class*="marginTop20"] div[class*="track"] > div[class*="mark"]:nth-child(1) > [class*="markValue"]::after {
   color: #43b581;
 }
 
-#user-settings div[class*="contentRegion"] main[class*="contentColumn"] div[class*="children"] > div[class*="preview"][class*="compactPreview"] ~ h2[class*="h2"][class*="marginTop60"] ~ div:not([class]) + div[class*="marginTop20"] div[class*="track"] > div[class*="mark"]:nth-child(4) > [class*="markValue"]::after {
+div[aria-label="USER_SETTINGS"] div[class*="contentRegion"] main[class*="contentColumn"] div[class*="children"] > div[class*="preview"][class*="compactPreview"] ~ h2[class*="h2"][class*="marginTop60"] ~ div:not([class]) + div[class*="marginTop20"] div[class*="track"] > div[class*="mark"]:nth-child(4) > [class*="markValue"]::after {
   color: var(--text-muted);
 }
