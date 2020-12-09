@@ -198,7 +198,7 @@ div[class*="cozyMessage"][class*="mentioned"] > div[class*="contents"] > div[cla
   top: 0;
   left: 0;
   content: "";
-  width: 2px;
+  width: 1.6px;
   background-color: rgba(250,166,26,.2);
   border-left: 4px solid #faa61a;
   border-radius: 3px 0 0 3px;
